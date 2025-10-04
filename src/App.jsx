@@ -1,12 +1,13 @@
 import { lazy, Suspense } from 'react';
 import './App.css';
 import Logo from './assets/logo.svg';
-import Testing from './component/Testing';
+import { Toaster } from "react-hot-toast";
 
 const Header = lazy(() => import('./component/Header'));
 const Banner = lazy(() => import('./pages/Banner'));
 const WeBegan = lazy(() => import('./component/WeBegan'));
 const Form = lazy(() => import('./component/Form'));
+const Testing = lazy(() => import('./component/Testing'));
 const Footer = lazy(() => import('./component/Footer'));
 
 const LoadingSpinner = () => (
@@ -24,14 +25,17 @@ const LoadingSpinner = () => (
 
 function App() {
   return (
+    <>
+     <Toaster position="top-right" reverseOrder={false} />
     <Suspense fallback={<LoadingSpinner />}>
       <Header />
       <Banner />
       <WeBegan />
-      <Testing />
       <Form />
+      <Testing />
       <Footer />
     </Suspense>
+    </>
   );
 }
 

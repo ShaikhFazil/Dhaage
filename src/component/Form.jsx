@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import toast from "react-hot-toast";
 
 const Form = () => {
 
@@ -7,6 +8,8 @@ const Form = () => {
     number: "",
     note: ""
   });
+
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     setFormData({
@@ -17,19 +20,34 @@ const Form = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
 
-    await fetch("https://script.google.com/macros/s/AKfycbzYUznu7q5m2jCdEGFvYgo8bixeksym4RMoAmfCjsC5jOvviH1gg9S5U-my3SccTVnajg/exec", {
-      method: "POST",
-      body: JSON.stringify(formData),
-    });
+    try {
+      const res = await fetch(
+        "https://script.google.com/macros/s/AKfycbzYUznu7q5m2jCdEGFvYgo8bixeksym4RMoAmfCjsC5jOvviH1gg9S5U-my3SccTVnajg/exec",
+        {
+          method: "POST",
+          body: JSON.stringify(formData),
+        }
+      );
 
-    alert("Form submitted successfully!");
-    setFormData({ fullName: "", number: "", note: "" });
+      if (res.ok) {
+        toast.success("Form submitted successfully!");
+        setFormData({ fullName: "", number: "", note: "" });
+      } else {
+        toast.error("Failed to submit form. Please try again!");
+      }
+    } catch (error) {
+      toast.error("Something went wrong. Try again later.");
+    } finally {
+      setLoading(false);
+    }
   };
 
 
+
   return (
-    <div className="relative min-h-screen flex items-center justify-center bg-[#480C2C] overflow-hidden px-6 py-12">
+    <div id="form-section" className="relative min-h-screen flex items-center justify-center bg-[#480C2C] overflow-hidden px-6 py-12">
       <svg
         className="absolute inset-0 w-full h-full"
         xmlns="http://www.w3.org/2000/svg"
@@ -113,11 +131,27 @@ const Form = () => {
           />
         </div>
 
-        {/* Send Button */}
-        <div className="flex items-center justify-center gap-3 mt-4">
+       {/* Send Button */}
+       <div className="flex items-center justify-center gap-3 mt-4">
           <div className="border border-[#C3AF69] w-1/6 h-[1px]"></div>
-          <button type="submit" className="px-6 py-2 text-lg font-medium rounded-xl bg-[#C3AF69]/20 text-[#C3AF69] border border-[#C3AF69] hover:bg-[#C3AF69]/40 transition">
-            SEND
+          <button
+            type="submit"
+            disabled={loading}
+            className={`px-6 py-2 text-lg font-medium rounded-xl border border-[#C3AF69] transition flex items-center justify-center gap-2
+              ${
+                loading
+                  ? "bg-[#C3AF69]/40 text-[#C3AF69]/80 cursor-not-allowed"
+                  : "bg-[#C3AF69]/20 text-[#C3AF69] hover:bg-[#C3AF69]/40 cursor-pointer"
+              }`}
+          >
+            {loading ? (
+              <>
+                <span className="loader border-2 border-t-transparent border-[#C3AF69] rounded-full w-5 h-5 animate-spin"></span>
+                Sending...
+              </>
+            ) : (
+              "SEND"
+            )}
           </button>
           <div className="border border-[#C3AF69] w-1/6 h-[1px]"></div>
         </div>
