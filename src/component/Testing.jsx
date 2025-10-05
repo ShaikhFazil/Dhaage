@@ -80,12 +80,12 @@ const Testing = () => {
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {[
-            "https://img.faballey.com/images/Product/XKS04397Z/d3.jpg",
-            "https://5.imimg.com/data5/SELLER/Default/2020/10/SP/IQ/UK/40758102/women-fashion-clothing.JPG",
-            "https://5.imimg.com/data5/SELLER/Default/2023/9/346223076/EO/IV/DC/91963053/ladies-garments-500x500.webp",
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsagculEvBw_DqQEPfboS5yx_1oLKoSdaqmA&s",
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgDm6hu7B0sKaBCurb8ZvEZdAU0O0zJlcCng&s",
-            "https://www.fabfunda.com/product-img/womens-wear-brown-pure-cotton--1721391686.jpeg",
+            "https://s.alicdn.com/@sc04/kf/A3404abf199d7420285a7abf26e2cafe8N/Indian-Pakistani-Designer-Punjabi-Kaftan-Dhoti-Salwar-Bollywood-Party-Wear-Dress-Clothes-Selling-Dress-Women-Wedding-Wear.jpeg",
+            "https://www.libas.in/cdn/shop/files/magenta-self-design-silk-blend-straight-kurta-with-trousers-and-dupatta-libas-1.jpg?v=1756117676",
+            "https://m.media-amazon.com/images/I/812PtChl2yL._UY1100_.jpg",
+            "https://m.media-amazon.com/images/I/71Tfvfnqu6L._UY1100_.jpg",
+            "https://www.shoplibas.com/cdn/shop/files/48014.jpg?v=1748350581",
+            "https://www.shoplibas.com/cdn/shop/products/48179A_1.jpg?v=1748351364",
           ].map((img, i) => (
             <motion.div
               key={i}

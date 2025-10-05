@@ -5,7 +5,7 @@ const Footer = () => {
     <div className="flex flex-col gap-6 bg-[#480C2C] px-4 sm:px-6 py-8">
       <div className="border-[1px] border-[#C3AF69] h-[1px] w-full"></div>
 
-      <div className="flex flex-wrap gap-4 md:gap-10 items-center justify-center pt-4">
+      {/* <div className="flex flex-wrap gap-4 md:gap-10 items-center justify-center pt-4">
         <h1 className="text-sm sm:text-lg md:text-2xl font-playfair text-[#C3AF69] text-center">
           CAREER
         </h1>
@@ -18,7 +18,7 @@ const Footer = () => {
         <h1 className="text-sm sm:text-lg md:text-2xl font-playfair text-[#C3AF69] text-center">
           TERMS & CONDITIONS
         </h1>
-      </div>
+      </div> */}
 
       <div className="w-full flex justify-center">
   <div className="lg:w-[50%] h-[250px] sm:h-[300px] md:h-[400px] flex items-center justify-center mt-6 relative overflow-hidden rounded-md border-2 border-[#C3AF69]">
@@ -37,7 +37,7 @@ const Footer = () => {
 
       <div className="flex flex-col gap-1 items-center justify-center mt-4">
         <h1 className="text-sm sm:text-base font-bold text-[#C3AF69]">
-          +91 8729876678
+          +91 9892937786
         </h1>
         <h1 className="text-[8px] sm:text-[10px] font-bold text-[#C3AF69]">
           WWW.DHAAGAE.COM
