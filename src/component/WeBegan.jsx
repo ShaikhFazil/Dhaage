@@ -8,7 +8,7 @@ const WeBegan = () => {
       {/* Section Title */}
       <div className="flex flex-col gap-4 px-4 sm:px-6">
         <div className="flex items-center justify-center text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-playfair text-[#C3AF69] text-center">
-          HOW WE BEGAN
+          WHY WE BEGAN
         </div>
 
         {/* Desktop overlapping boxes */}

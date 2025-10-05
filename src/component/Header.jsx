@@ -4,7 +4,7 @@ import Logo from "../assets/logo2.png";
 
 const Header = () => {
   return (
-    <div className="relative pb-2">
+    <div className="relative lg:pb-10">
       <div className="flex flex-row gap-2 p-5 items-center">
         {/* <div className="flex items-center text-center">
           <Menu size={19} />
@@ -14,11 +14,11 @@ const Header = () => {
         </div> */}
       </div>
 
-      <div className="absolute left-1/2 lg:-top-10 -top-2 transform -translate-x-1/2 z-50">
+      <div className="absolute left-1/2 lg:-top-13 -top-4 transform -translate-x-1/2 z-50">
         <img
           src={Logo}
           alt="logo"
-          className="w-40 sm:w-56 md:w-80 h-auto"
+          className="w-70 sm:w-56 md:w-120 h-auto"
         />
       </div>
     </div>
